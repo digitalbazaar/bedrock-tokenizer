@@ -25,13 +25,13 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-tokenizer",
   "dependencies": {
-    "assert-plus": "^1.0.0",
-    "webkms-client": "^2.1.0"
+    "@digitalbazaar/webkms-client": "digitalbazaar/webkms-client#use-webkms-context",
+    "assert-plus": "^1.0.0"
   },
   "peerDependencies": {
-    "bedrock": "^3.0.0",
+    "bedrock": "^4.1.1",
     "bedrock-https-agent": "^2.0.0",
-    "bedrock-mongodb": "^8.0.1"
+    "bedrock-mongodb": "^8.2.0"
   },
   "devDependencies": {
     "eslint": "^7.7.0",

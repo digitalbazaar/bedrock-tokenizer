@@ -1,3 +1,8 @@
+/*!
+ * Copyright (c) 2020-2021 Digital Bazaar, Inc. All rights reserved.
+ */
+'use strict';
+
 const database = require('bedrock-mongodb');
 
 const isHmac = hmac => {
@@ -17,7 +22,8 @@ exports.isTokenizer = possibleTokenizer => {
   possibleTokenizer.should.be.an('object');
   possibleTokenizer.should.have.property('id');
   possibleTokenizer.id.should.be.a('string');
-  possibleTokenizer.id.should.include('did:key');
+  // should start with multibase identifier 'z' signifying base58 encoded string
+  possibleTokenizer.id.startsWith('z').should.be.true;
   possibleTokenizer.should.have.property('hmac');
   isHmac(possibleTokenizer.hmac);
 };

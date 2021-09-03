@@ -1,5 +1,24 @@
 # bedrock-tokenizer ChangeLog
 
+## 2.0.0 - 2021-09-xx
+
+### Added
+- **BREAKING**: The tokenizer now requires a `meterId` configured using
+  `config.tokenizer.kms.meterId`. The meter must be created before the tokenizer
+  can be used. The meter's controller must be the `app` identity per
+  `bedrock-app-identity`.
+
+### Changed
+- **BREAKING**: Configuration of the kms is now under a `kms` namespace in the
+  config. The `config.tokenizer.kmsModule` configuration is now
+  `config.tokenizer.kms.defaultKmsModule`. The `config.tokenizer.kmsBaseUrl`
+  configuration is now `config.tokenizer.kms.baseUrl`.
+- **BREAKING**: Use the application's identity use `bedrock-app-identity` to
+  generate the `capabilityAgent` instead of a random seed during tokenizer
+  creation.
+- **BREAKING**: Use random base58 encoded value for the `id` of the tokenizer
+  instead of the `id` from a randomly generated `capabilityAgent`.
+
 ## 1.1.0 - 2020-10-08
 
 ### Changed

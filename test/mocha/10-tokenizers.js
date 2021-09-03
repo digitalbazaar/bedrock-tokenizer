@@ -1,3 +1,8 @@
+/*!
+ * Copyright (c) 2020-2021 Digital Bazaar, Inc. All rights reserved.
+ */
+'use strict';
+
 const {requireUncached, isTokenizer} = require('./helpers');
 const {tokenizers} = requireUncached('bedrock-tokenizer');
 
@@ -26,7 +31,7 @@ describe('Tokenizers', function() {
     hmac.algorithm.should.equal(databaseTokenizer.hmac.algorithm);
     hmac.invocationSigner.id.should.equal(
       databaseTokenizer.hmac.invocationSigner.id);
-    hmac.kmsClient.keystore.should.equal(
-      databaseTokenizer.hmac.kmsClient.keystore);
+    hmac.kmsClient.keystoreId.should.equal(
+      databaseTokenizer.hmac.kmsClient.keystoreId);
   });
 });

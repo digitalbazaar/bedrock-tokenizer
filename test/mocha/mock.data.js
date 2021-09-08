@@ -19,15 +19,6 @@ const products = [{
     id: 'did:key:z6MkwZ7AXrDpuVi5duY2qvVSx1tBkGmVnmRjDvvwzoVnAzC4',
     type: 'webkms',
   }
-}, {
-  // Use default edv dev `id` and `serviceId`
-  id: 'urn:uuid:dbd15f08-ff67-11eb-893b-10bf48838a41',
-  name: 'Example EDV',
-  service: {
-    // default dev `id` configured in `bedrock-edv-storage`
-    id: 'did:key:z6MkhNyDoLpNcPv5grXoJSJVJjvApd46JU5nPL6cwi88caYW',
-    type: 'edv',
-  }
 }];
 
 for(const product of products) {

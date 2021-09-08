@@ -12,7 +12,6 @@
   "author": "",
   "dependencies": {
     "bedrock": "^4.4.0",
-    "bedrock-account": "^5.0.0",
     "bedrock-app-identity": "^1.0.0",
     "bedrock-did-context": "^2.0.0",
     "bedrock-did-io": "^4.0.0",
@@ -28,8 +27,6 @@
     "bedrock-meter-usage-reporter": "^4.0.0",
     "bedrock-mongodb": "^8.4.0",
     "bedrock-package-manager": "^1.1.0",
-    "bedrock-passport": "^6.1.0",
-    "bedrock-permission": "^3.2.0",
     "bedrock-security-context": "^4.1.0",
     "bedrock-server": "^3.0.0",
     "bedrock-ssm-mongodb": "^6.0.0",

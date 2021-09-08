@@ -4,12 +4,9 @@
 'use strict';
 
 const bedrock = require('bedrock');
-require('bedrock-account');
 const {getAppIdentity} = require('bedrock-app-identity');
 require('bedrock-express');
 require('bedrock-jsonld-document-loader');
-require('bedrock-passport');
-require('bedrock-permission');
 require('bedrock-mongodb');
 require('bedrock-tokenizer');
 require('bedrock-https-agent');

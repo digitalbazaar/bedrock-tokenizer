@@ -13,11 +13,6 @@
   config. The `config.tokenizer.kmsModule` configuration is now
   `config.tokenizer.kms.defaultKmsModule`. The `config.tokenizer.kmsBaseUrl`
   configuration is now `config.tokenizer.kms.baseUrl`.
-- **BREAKING**: Use the application's identity use `bedrock-app-identity` to
-  generate the `capabilityAgent` instead of a random seed during tokenizer
-  creation.
-- **BREAKING**: Use random base58 encoded value for the `id` of the tokenizer
-  instead of the `id` from a randomly generated `capabilityAgent`.
 
 ## 1.1.0 - 2020-10-08
 

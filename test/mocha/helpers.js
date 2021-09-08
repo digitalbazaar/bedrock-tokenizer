@@ -22,8 +22,7 @@ exports.isTokenizer = possibleTokenizer => {
   possibleTokenizer.should.be.an('object');
   possibleTokenizer.should.have.property('id');
   possibleTokenizer.id.should.be.a('string');
-  // should start with multibase identifier 'z' signifying base58 encoded string
-  possibleTokenizer.id.startsWith('z').should.be.true;
+  possibleTokenizer.id.should.include('did:key');
   possibleTokenizer.should.have.property('hmac');
   isHmac(possibleTokenizer.hmac);
 };

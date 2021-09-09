@@ -9,6 +9,7 @@
   `bedrock-app-identity`.
 
 ### Changed
+- **BREAKING**: `Hmac.sign()` will now return a `Uint8Array`.
 - **BREAKING**: Configuration of the kms is now under a `kms` namespace in the
   config. The `config.tokenizer.kmsModule` configuration is now
   `config.tokenizer.kms.defaultKmsModule`. The `config.tokenizer.kmsBaseUrl`

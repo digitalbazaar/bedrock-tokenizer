@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 2.0.0 - 2021-09-xx
+## 2.0.0 - 2021-09-09
 
 ### Added
 - **BREAKING**: The tokenizer now requires a `meterId` configured using

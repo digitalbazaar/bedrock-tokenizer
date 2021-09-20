@@ -22,7 +22,7 @@
     "bedrock-kms": "^7.0.1",
     "bedrock-kms-http": "^9.0.0",
     "bedrock-ledger-context": "^18.0.0",
-    "bedrock-meter": "^1.0.0",
+    "bedrock-meter": "^1.1.0",
     "bedrock-meter-http": "^2.0.0",
     "bedrock-meter-usage-reporter": "^4.0.0",
     "bedrock-mongodb": "^8.4.0",

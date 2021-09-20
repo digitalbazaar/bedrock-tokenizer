@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 2.1.0 - 2021-09-xx
+## 2.1.0 - 2021-09-20
 
 ### Changed
 - `tokenizer.kms.meterId` now defaults to use the mock meter id provided by

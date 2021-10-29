@@ -31,6 +31,11 @@ exports.cleanDB = async () => {
   await database.collections['tokenizer-tokenizer'].deleteMany({});
 };
 
+exports.insertRecord = async ({record}) => {
+  const collection = database.collections['tokenizer-tokenizer'];
+  await collection.insertOne(record, database.writeOptions);
+};
+
 // we need to reset the module for most tests
 exports.requireUncached = module => {
   delete require.cache[require.resolve(module)];

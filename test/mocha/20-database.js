@@ -7,8 +7,8 @@ const {requireUncached, cleanDB, insertRecord} = require('./helpers');
 const {tokenizers} = requireUncached('bedrock-tokenizer');
 const {mockRecord} = require('./mock.data.js');
 
-describe('Tokenizer Database Methods', function() {
-  describe('Find Methods', function() {
+describe('Tokenizer Database Tests', function() {
+  describe('Indexes', function() {
     beforeEach(async () => {
       await cleanDB();
     });
@@ -36,11 +36,6 @@ describe('Tokenizer Database Methods', function() {
       executionStats.executionTimeMillis.should.equal(0);
       executionStats.executionStages.inputStage.inputStage.stage.should
         .equal('IXSCAN');
-    });
-  });
-  describe('Update Methods', function() {
-    beforeEach(async () => {
-      await cleanDB();
     });
     it(`is properly indexed for 'state' parameter`, async function() {
       const record = mockRecord;

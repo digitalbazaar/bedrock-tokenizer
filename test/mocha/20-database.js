@@ -37,29 +37,6 @@ describe('Tokenizer Database Methods', function() {
       executionStats.executionStages.inputStage.inputStage.stage.should
         .equal('IXSCAN');
     });
-    it(`No documents are returned when 'id' parameter is not found`,
-      async function() {
-        const id = '1234';
-        const {executionStats} = await tokenizers.get({id, explain: true});
-        executionStats.nReturned.should.equal(0);
-        executionStats.totalKeysExamined.should.equal(0);
-        executionStats.totalDocsExamined.should.equal(0);
-        executionStats.executionTimeMillis.should.equal(0);
-        executionStats.executionStages.inputStage.inputStage.stage.should
-          .equal('IXSCAN');
-      });
-    it(`No documents are returned when 'current' parameter is not found`,
-      async function() {
-        const {executionStats} = await tokenizers._readCurrentTokenizerRecord({
-          explain: true
-        });
-        executionStats.nReturned.should.equal(0);
-        executionStats.totalKeysExamined.should.equal(0);
-        executionStats.totalDocsExamined.should.equal(0);
-        executionStats.executionTimeMillis.should.equal(0);
-        executionStats.executionStages.inputStage.inputStage.stage.should
-          .equal('IXSCAN');
-      });
   });
   describe('Update Methods', function() {
     beforeEach(async () => {
@@ -100,22 +77,6 @@ describe('Tokenizer Database Methods', function() {
         executionStats.nReturned.should.equal(1);
         executionStats.totalKeysExamined.should.equal(1);
         executionStats.totalDocsExamined.should.equal(1);
-        executionStats.executionTimeMillis.should.equal(0);
-        executionStats.executionStages.inputStage.inputStage.stage.should
-          .equal('IXSCAN');
-      });
-    it(`No documents are returned when 'state' parameter is not found`,
-      async function() {
-        const record = mockRecord;
-        record.tokenizer.state = 'notfound';
-        await insertRecord({record});
-
-        const {executionStats} = await tokenizers._markTokenizerAsCurrent({
-          explain: true
-        });
-        executionStats.nReturned.should.equal(0);
-        executionStats.totalKeysExamined.should.equal(0);
-        executionStats.totalDocsExamined.should.equal(0);
         executionStats.executionTimeMillis.should.equal(0);
         executionStats.executionStages.inputStage.inputStage.stage.should
           .equal('IXSCAN');

@@ -22,8 +22,8 @@ describe('Tokenizer Database Tests', function() {
       executionStats.totalKeysExamined.should.equal(1);
       executionStats.totalDocsExamined.should.equal(1);
       executionStats.executionTimeMillis.should.equal(0);
-      executionStats.executionStages.inputStage.inputStage.stage.should
-        .equal('IXSCAN');
+      executionStats.executionStages.inputStage.inputStage.inputStage.stage
+        .should.equal('IXSCAN');
     });
     it(`is properly indexed for 'current' parameter`, async function() {
       await tokenizers._createTokenizer();
@@ -34,8 +34,8 @@ describe('Tokenizer Database Tests', function() {
       executionStats.totalKeysExamined.should.equal(1);
       executionStats.totalDocsExamined.should.equal(1);
       executionStats.executionTimeMillis.should.equal(0);
-      executionStats.executionStages.inputStage.inputStage.stage.should
-        .equal('IXSCAN');
+      executionStats.executionStages.inputStage.inputStage.inputStage.stage
+        .should.equal('IXSCAN');
     });
     it(`is properly indexed for 'state' parameter`, async function() {
       const record = mockRecord;

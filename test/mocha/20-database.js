@@ -21,7 +21,6 @@ describe('Tokenizer Database Tests', function() {
       executionStats.nReturned.should.equal(1);
       executionStats.totalKeysExamined.should.equal(1);
       executionStats.totalDocsExamined.should.equal(1);
-      executionStats.executionTimeMillis.should.equal(0);
       executionStats.executionStages.inputStage.inputStage.inputStage.stage
         .should.equal('IXSCAN');
     });
@@ -33,7 +32,6 @@ describe('Tokenizer Database Tests', function() {
       executionStats.nReturned.should.equal(1);
       executionStats.totalKeysExamined.should.equal(1);
       executionStats.totalDocsExamined.should.equal(1);
-      executionStats.executionTimeMillis.should.equal(0);
       executionStats.executionStages.inputStage.inputStage.inputStage.stage
         .should.equal('IXSCAN');
     });
@@ -48,7 +46,6 @@ describe('Tokenizer Database Tests', function() {
       executionStats.nReturned.should.equal(1);
       executionStats.totalKeysExamined.should.equal(1);
       executionStats.totalDocsExamined.should.equal(1);
-      executionStats.executionTimeMillis.should.equal(0);
       executionStats.executionStages.inputStage.inputStage.stage.should
         .equal('IXSCAN');
     });
@@ -72,7 +69,6 @@ describe('Tokenizer Database Tests', function() {
         executionStats.nReturned.should.equal(1);
         executionStats.totalKeysExamined.should.equal(1);
         executionStats.totalDocsExamined.should.equal(1);
-        executionStats.executionTimeMillis.should.equal(0);
         executionStats.executionStages.inputStage.inputStage.stage.should
           .equal('IXSCAN');
       });

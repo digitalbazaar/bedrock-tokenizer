@@ -12,7 +12,7 @@ describe('Tokenizer Database Tests', function() {
     beforeEach(async () => {
       await cleanDB();
     });
-    it(`is properly indexed for 'id' parameter`, async function() {
+    it(`is properly indexed for 'tokenizer.id' in get()`, async function() {
       const record = mockRecord;
       await insertRecord({record});
 
@@ -24,7 +24,9 @@ describe('Tokenizer Database Tests', function() {
       executionStats.executionStages.inputStage.inputStage.inputStage.stage
         .should.equal('IXSCAN');
     });
-    it(`is properly indexed for 'current' parameter`, async function() {
+    it(`is properly indexed for 'tokenizer.current' in ` +
+    '_readCurrentTokenizerRecord()',
+    async function() {
       await tokenizers._createTokenizer();
       const {executionStats} = await tokenizers._readCurrentTokenizerRecord({
         explain: true
@@ -35,36 +37,29 @@ describe('Tokenizer Database Tests', function() {
       executionStats.executionStages.inputStage.inputStage.inputStage.stage
         .should.equal('IXSCAN');
     });
-    it(`is properly indexed for 'state' parameter`, async function() {
-      const record = mockRecord;
-      record.tokenizer.state = 'ready';
-      await insertRecord({record});
-
-      const {executionStats} = await tokenizers._markTokenizerAsCurrent({
-        explain: true
-      });
-      executionStats.nReturned.should.equal(1);
-      executionStats.totalKeysExamined.should.equal(1);
-      executionStats.totalDocsExamined.should.equal(1);
-      executionStats.executionStages.inputStage.inputStage.stage.should
-        .equal('IXSCAN');
-    });
-    it(`is properly indexed for compound query of 'id' and 'state'`,
+    it(`is properly indexed for 'tokenizer.state' in deprecateCurrent()`,
       async function() {
         const record = mockRecord;
-        record.tokenizer.state = 'pending';
+        record.tokenizer.state = 'current';
         await insertRecord({record});
 
-        const {tokenizer} = record;
-        const keystore = {
-          id: '4321'
-        };
-        const key = {
-          id: '1234',
-          type: 'test'
-        };
-        const {executionStats} = await tokenizers._addKeystoreAndHmacKeys({
-          tokenizer, keystore, key, explain: true
+        const {executionStats} = await tokenizers.deprecateCurrent({
+          explain: true
+        });
+        executionStats.nReturned.should.equal(1);
+        executionStats.totalKeysExamined.should.equal(1);
+        executionStats.totalDocsExamined.should.equal(1);
+        executionStats.executionStages.inputStage.inputStage.stage
+          .should.equal('IXSCAN');
+      });
+    it(`is properly indexed for 'tokenizer.state' in _markTokenizerAsCurrent`,
+      async function() {
+        const record = mockRecord;
+        record.tokenizer.state = 'ready';
+        await insertRecord({record});
+
+        const {executionStats} = await tokenizers._markTokenizerAsCurrent({
+          explain: true
         });
         executionStats.nReturned.should.equal(1);
         executionStats.totalKeysExamined.should.equal(1);
@@ -72,5 +67,28 @@ describe('Tokenizer Database Tests', function() {
         executionStats.executionStages.inputStage.inputStage.stage.should
           .equal('IXSCAN');
       });
+    it(`is properly indexed for compound query of 'tokenizer.id' and` +
+    `'tokenizer.state' in _addKeystoreAndHmacKeys()`, async function() {
+      const record = mockRecord;
+      record.tokenizer.state = 'pending';
+      await insertRecord({record});
+
+      const {tokenizer} = record;
+      const keystore = {
+        id: '4321'
+      };
+      const key = {
+        id: '1234',
+        type: 'test'
+      };
+      const {executionStats} = await tokenizers._addKeystoreAndHmacKeys({
+        tokenizer, keystore, key, explain: true
+      });
+      executionStats.nReturned.should.equal(1);
+      executionStats.totalKeysExamined.should.equal(1);
+      executionStats.totalDocsExamined.should.equal(1);
+      executionStats.executionStages.inputStage.inputStage.stage.should
+        .equal('IXSCAN');
+    });
   });
 });

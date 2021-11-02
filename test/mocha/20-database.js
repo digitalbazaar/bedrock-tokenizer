@@ -67,7 +67,7 @@ describe('Tokenizer Database Tests', function() {
         executionStats.executionStages.inputStage.inputStage.stage.should
           .equal('IXSCAN');
       });
-    it(`is properly indexed for compound query of 'tokenizer.id' and` +
+    it(`is properly indexed for compound query of 'tokenizer.id' and ` +
     `'tokenizer.state' in _addKeystoreAndHmacKeys()`, async function() {
       const record = mockRecord;
       record.tokenizer.state = 'pending';

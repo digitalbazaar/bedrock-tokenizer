@@ -68,7 +68,7 @@ describe('Tokenizer Database Tests', function() {
           .equal('IXSCAN');
       });
     it(`is properly indexed for compound query of 'tokenizer.id' and ` +
-    `'tokenizer.state' in _addKeystoreAndHmacKeys()`, async function() {
+    `'tokenizer.state' in _readyTokenizer()`, async function() {
       const record = mockRecord;
       record.tokenizer.state = 'pending';
       await insertRecord({record});
@@ -81,7 +81,7 @@ describe('Tokenizer Database Tests', function() {
         id: '1234',
         type: 'test'
       };
-      const {executionStats} = await tokenizers._addKeystoreAndHmacKeys({
+      const {executionStats} = await tokenizers._readyTokenizer({
         tokenizer, keystore, key, explain: true
       });
       executionStats.nReturned.should.equal(1);

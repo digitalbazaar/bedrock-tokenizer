@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 2.2.0 - TBD
+## 2.2.0 - 2021-11-04
 
 ### Added
 - Added optional `explain` param to get more details about database performance.

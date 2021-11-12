@@ -5,21 +5,16 @@
 
 const {requireUncached, cleanDB, insertRecord} = require('./helpers');
 const {tokenizers} = requireUncached('bedrock-tokenizer');
-const {mockRecord} = require('./mock.data.js');
+const {mockRecord, mockRecord2} = require('./mock.data.js');
 
 describe('Tokenizer Database Tests', function() {
   describe('Indexes', function() {
     beforeEach(async () => {
       await cleanDB();
 
-      const record2 = JSON.parse(JSON.stringify(mockRecord));
-      record2.tokenizer
-        .id = 'did:key:z6Mkr2NYivNUmi6Do3yjxQqrjPPo6VGSEP9Jb5rRjGVVn5rG',
-      record2.tokenizer.secret = 'PpPTmN0TIkoG9x_C-TfkR1-3BriHGPr6CnqDqB12-WY';
-
       // second record is inserted here in order to do proper assertions for
       // 'nReturned', 'totalKeysExamined' and 'totalDocsExamined'.
-      await insertRecord({record: record2});
+      await insertRecord({record: mockRecord2});
     });
     it(`is properly indexed for 'tokenizer.id' in get()`, async function() {
       const record = mockRecord;

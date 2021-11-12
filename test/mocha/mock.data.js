@@ -38,4 +38,16 @@ const mockRecord = {
   }
 };
 
-module.exports = {data, mockRecord};
+const mockRecord2 = {
+  meta: {
+    created: now,
+    updated: now
+  },
+  tokenizer: {
+    id: 'did:key:z6Mkr2NYivNUmi6Do3yjxQqrjPPo6VGSEP9Jb5rRjGVVn5rG',
+    secret: 'PpPTmN0TIkoG9x_C-TfkR1-3BriHGPr6CnqDqB12-WY',
+    state: 'pending'
+  }
+};
+
+module.exports = {data, mockRecord, mockRecord2};

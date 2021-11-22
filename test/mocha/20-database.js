@@ -27,10 +27,11 @@ describe('Tokenizer Database Tests', function() {
       executionStats.totalDocsExamined.should.equal(1);
       executionStats.executionStages.inputStage.inputStage.inputStage.stage
         .should.equal('IXSCAN');
+      executionStats.executionStages.inputStage.inputStage.inputStage.keyPattern
+        .should.eql({'tokenizer.id': 1});
     });
     it(`is properly indexed for 'tokenizer.current' in ` +
-    '_readCurrentTokenizerRecord()',
-    async function() {
+      '_readCurrentTokenizerRecord()', async function() {
       await tokenizers._createTokenizer();
       const {executionStats} = await tokenizers._readCurrentTokenizerRecord({
         explain: true
@@ -40,6 +41,8 @@ describe('Tokenizer Database Tests', function() {
       executionStats.totalDocsExamined.should.equal(1);
       executionStats.executionStages.inputStage.inputStage.inputStage.stage
         .should.equal('IXSCAN');
+      executionStats.executionStages.inputStage.inputStage.inputStage.keyPattern
+        .should.eql({'tokenizer.current': 1});
     });
     it(`is properly indexed for 'tokenizer.state' in deprecateCurrent()`,
       async function() {
@@ -55,6 +58,8 @@ describe('Tokenizer Database Tests', function() {
         executionStats.totalDocsExamined.should.equal(1);
         executionStats.executionStages.inputStage.inputStage.stage
           .should.equal('IXSCAN');
+        executionStats.executionStages.inputStage.inputStage.keyPattern
+          .should.eql({'tokenizer.state': 1});
       });
     it(`is properly indexed for 'tokenizer.state' in _markTokenizerAsCurrent`,
       async function() {
@@ -70,9 +75,11 @@ describe('Tokenizer Database Tests', function() {
         executionStats.totalDocsExamined.should.equal(1);
         executionStats.executionStages.inputStage.inputStage.stage.should
           .equal('IXSCAN');
+        executionStats.executionStages.inputStage.inputStage.keyPattern
+          .should.eql({'tokenizer.state': 1});
       });
     it(`is properly indexed for compound query of 'tokenizer.id' and ` +
-    `'tokenizer.state' in _readyTokenizer()`, async function() {
+      `'tokenizer.state' in _readyTokenizer()`, async function() {
       const record = mockRecord;
       record.tokenizer.state = 'pending';
       await insertRecord({record});
@@ -93,6 +100,8 @@ describe('Tokenizer Database Tests', function() {
       executionStats.totalDocsExamined.should.equal(1);
       executionStats.executionStages.inputStage.inputStage.stage.should
         .equal('IXSCAN');
+      executionStats.executionStages.inputStage.inputStage.keyPattern
+        .should.eql({'tokenizer.id': 1});
     });
   });
 });

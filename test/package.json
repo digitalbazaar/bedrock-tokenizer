@@ -11,14 +11,12 @@
   },
   "author": "",
   "dependencies": {
-    "@digitalbazaar/http-signature-zcap-invoke": "^5.0.1",
     "bedrock": "^4.4.0",
     "bedrock-app-identity": "^1.0.0",
     "bedrock-did-context": "^2.0.0",
     "bedrock-did-io": "^5.0.0",
     "bedrock-express": "^6.2.0",
     "bedrock-https-agent": "^2.1.0",
-    "bedrock-identity": "^8.0.0",
     "bedrock-jsonld-document-loader": "^1.1.0",
     "bedrock-kms": "^8.0.0",
     "bedrock-kms-http": "^11.0.0",
@@ -37,9 +35,8 @@
     "bedrock-veres-one-context": "^11.0.0",
     "bedrock-zcap-storage": "^5.0.0",
     "cross-env": "^7.0.3",
-    "jsonld-signatures": "^9.3.0",
-    "nyc": "^15.1.0",
-    "zcap-context": "^1.2.1"
+    "eslint-config-digitalbazaar": "^2.8.0",
+    "nyc": "^15.1.0"
   },
   "nyc": {
     "excludeNodeModules": false,

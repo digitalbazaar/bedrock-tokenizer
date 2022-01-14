@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 3.0.0 - 2022-TBD
+## 3.0.0 - 2022-01-14
 
 ### Changed
 - **BREAKING**: Use `@digitalbazaar/webkms-client@9.0`.

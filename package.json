@@ -1,6 +1,6 @@
 {
   "name": "bedrock-tokenizer",
-  "version": "4.0.0",
+  "version": "4.0.1-0",
   "description": "A Bedrock module to provide auto-rotating tokenizers",
   "main": "./lib",
   "scripts": {

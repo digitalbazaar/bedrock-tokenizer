@@ -1,9 +1,14 @@
 # bedrock-tokenizer ChangeLog
 
+## 4.0.0 - 2022-03-xx
+
+### Changed
+- **BREAKING**: Use `@digitalbazaar/webkms-client@10`.
+
 ## 3.0.0 - 2022-01-14
 
 ### Changed
-- **BREAKING**: Use `@digitalbazaar/webkms-client@9.0`.
+- **BREAKING**: Use `@digitalbazaar/webkms-client@9`.
 
 ## 2.2.0 - 2021-11-04
 

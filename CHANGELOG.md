@@ -1,5 +1,16 @@
 # bedrock-tokenizer ChangeLog
 
+## 5.1.0 - 2022-03-xx
+
+### Changed
+- Allow auto-rotation to be disabled by setting auto-rotation
+  checker to `null`. This could be previously done by setting
+  a function that returned `false`, but setting `null` allows
+  original state to be restored and avoids other internal calls.
+
+### Fixed
+- Ensure `CACHED_TOKENIZER` is evicted when tokenizer rotation occurs.
+
 ## 5.0.0 - 2022-03-12
 
 ### Changed

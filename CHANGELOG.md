@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 5.1.0 - 2022-03-xx
+## 5.1.0 - 2022-03-12
 
 ### Changed
 - Allow auto-rotation to be disabled by setting auto-rotation

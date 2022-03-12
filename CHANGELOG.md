@@ -1,5 +1,11 @@
 # bedrock-tokenizer ChangeLog
 
+## 5.0.0 - TBD
+
+### Changed
+- **BREAKING**: Remove usage of deprecated `database.writeOptions`.
+- Code clean-up.
+
 ## 4.0.0 - 2022-03-01
 
 ### Changed

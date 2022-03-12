@@ -33,7 +33,7 @@ exports.cleanDB = async () => {
 
 exports.insertRecord = async ({record}) => {
   const collection = database.collections['tokenizer-tokenizer'];
-  await collection.insertOne(record, database.writeOptions);
+  await collection.insertOne(record);
 };
 
 // we need to reset the module for most tests

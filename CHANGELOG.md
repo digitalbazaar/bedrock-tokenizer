@@ -1,5 +1,11 @@
 # bedrock-tokenizer ChangeLog
 
+## 6.0.0 - 2022-03-xx
+
+### Changed
+- **BREAKING**: Locally hash values prior to sending them to
+  the WebKMS system to increase privacy and limit payload size.
+
 ## 5.1.0 - 2022-03-12
 
 ### Changed

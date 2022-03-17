@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 6.0.0 - 2022-03-xx
+## 6.0.0 - 2022-03-17
 
 ### Changed
 - **BREAKING**: Locally hash values prior to sending them to

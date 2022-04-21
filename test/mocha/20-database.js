@@ -1,11 +1,9 @@
 /*!
  * Copyright (c) 2020-2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const {requireUncached, cleanDB, insertRecord} = require('./helpers');
-const {tokenizers} = requireUncached('bedrock-tokenizer');
-const {mockRecord, mockRecord2} = require('./mock.data.js');
+import {cleanDB, insertRecord} from './helpers.js';
+import {mockRecord, mockRecord2} from './mock.data.js';
+import {tokenizers} from '@bedrock/tokenizer';
 
 describe('Tokenizer Database Tests', function() {
   describe('Indexes', function() {

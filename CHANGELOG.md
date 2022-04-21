@@ -9,6 +9,9 @@
 - **BREAKING**: Require node 14.x.
 - **BREAKING**: `setAutoRotationChecker` takes the named parameter `method`
   now instead of being unnamed.
+- **BREAKING**: Improve errors and error causes when getting the current
+  tokenizer.
+- Add logging of various tokenizer creation / rotation errors.
 
 ## 6.0.0 - 2022-03-17
 

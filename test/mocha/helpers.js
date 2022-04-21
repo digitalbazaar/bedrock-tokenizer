@@ -1,11 +1,9 @@
 /*!
  * Copyright (c) 2020-2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+import * as database from '@bedrock/mongodb';
 
-const database = require('bedrock-mongodb');
-
-const isHmac = hmac => {
+function isHmac(hmac) {
   hmac.should.be.an('object');
   hmac.should.have.property('id');
   hmac.id.should.be.a('string');
@@ -15,9 +13,9 @@ const isHmac = hmac => {
   hmac.should.have.property('capability');
   hmac.should.have.property('invocationSigner');
   hmac.should.have.property('kmsClient');
-};
+}
 
-exports.isTokenizer = possibleTokenizer => {
+export function isTokenizer(possibleTokenizer) {
   should.exist(possibleTokenizer);
   possibleTokenizer.should.be.an('object');
   possibleTokenizer.should.have.property('id');
@@ -25,19 +23,13 @@ exports.isTokenizer = possibleTokenizer => {
   possibleTokenizer.id.should.include('did:key');
   possibleTokenizer.should.have.property('hmac');
   isHmac(possibleTokenizer.hmac);
-};
+}
 
-exports.cleanDB = async () => {
+export async function cleanDB() {
   await database.collections['tokenizer-tokenizer'].deleteMany({});
-};
+}
 
-exports.insertRecord = async ({record}) => {
+export async function insertRecord({record}) {
   const collection = database.collections['tokenizer-tokenizer'];
   await collection.insertOne(record);
-};
-
-// we need to reset the module for most tests
-exports.requireUncached = module => {
-  delete require.cache[require.resolve(module)];
-  return require(module);
-};
+}

@@ -1,5 +1,15 @@
 # bedrock-tokenizer ChangeLog
 
+## 7.0.0 - 2022-04-xx
+
+### Changed
+- **BREAKING**: Rename package to `@bedrock/tokenizer`.
+- **BREAKING**: Convert to module (ESM).
+- **BREAKING**: Remove default export.
+- **BREAKING**: Require node 14.x.
+- **BREAKING**: `setAutoRotationChecker` takes the named parameter `method`
+  now instead of being unnamed.
+
 ## 6.0.0 - 2022-03-17
 
 ### Changed

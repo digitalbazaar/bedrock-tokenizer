@@ -1,5 +1,15 @@
 # bedrock-tokenizer ChangeLog
 
+## 8.0.0 - 2022-04-xx
+
+### Changed
+- **BREAKING**: Update peer deps:
+  - `@bedrock/core@6`
+  - `@bedrock/app-identity@3`
+  - `@bedrock/https-agent@4`
+  - `@bedrock/mongodb@10`.
+
+
 ## 7.0.0 - 2022-04-21
 
 ### Changed

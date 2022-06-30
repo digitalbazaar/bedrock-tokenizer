@@ -1,5 +1,10 @@
 # bedrock-tokenizer ChangeLog
 
+## 8.0.1 - 2022-xx-xx
+
+### Changed
+- Test on Node.js 18.x.
+
 ## 8.0.0 - 2022-04-29
 
 ### Changed

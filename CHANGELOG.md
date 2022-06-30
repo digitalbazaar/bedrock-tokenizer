@@ -16,7 +16,6 @@
   - `@bedrock/https-agent@4`
   - `@bedrock/mongodb@10`.
 
-
 ## 7.0.0 - 2022-04-21
 
 ### Changed

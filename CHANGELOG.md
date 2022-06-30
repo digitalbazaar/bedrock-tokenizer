@@ -1,8 +1,9 @@
 # bedrock-tokenizer ChangeLog
 
-## 8.0.1 - 2022-xx-xx
+## 9.0.0 - 2022-xx-xx
 
 ### Changed
+- **BREAKING**: Require Node.js >=16.
 - Test on Node.js 18.x.
 
 ## 8.0.0 - 2022-04-29

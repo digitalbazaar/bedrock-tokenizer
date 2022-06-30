@@ -6,6 +6,7 @@
 - **BREAKING**: Require Node.js >=16.
 - Use `package.json` `files` field.
 - Test on Node.js 18.x.
+- Lint module.
 
 ## 8.0.0 - 2022-04-29
 

@@ -23,4 +23,4 @@ config.mongodb.dropCollections.collections = [];
 // HTTPS Agent
 config['https-agent'].rejectUnauthorized = false;
 
-config.tokenizer.kms.ipAllowList = ['127.0.0.1/32'];
+config.tokenizer.kms.ipAllowList = ['127.0.0.1/32', '::1/128'];

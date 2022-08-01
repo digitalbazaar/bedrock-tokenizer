@@ -30,7 +30,6 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-tokenizer",
   "dependencies": {
     "@digitalbazaar/webkms-client": "^11.0.0",
-    "assert-plus": "^1.0.0",
     "base64url-universal": "^2.0.0"
   },
   "peerDependencies": {

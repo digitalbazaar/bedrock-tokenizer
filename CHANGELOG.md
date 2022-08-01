@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 9.0.1 - 2022-08-xx
+## 9.0.1 - 2022-08-01
 
 ### Fixed
 - Removed unnecessary dependency `assert-plus`.

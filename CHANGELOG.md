@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 9.1.0 - 2022-08-xx
+## 9.1.0 - 2022-08-02
 
 ### Changed
 - Update to `@digitalbazaar/webkms-client@12`; should be no

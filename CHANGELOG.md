@@ -1,5 +1,10 @@
 # bedrock-tokenizer ChangeLog
 
+## 9.2.0 - 2022-11-dd
+
+### Changed
+- Update dev mode meter to work with `@bedrock/meter@5`.
+
 ## 9.1.0 - 2022-08-02
 
 ### Changed

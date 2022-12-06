@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 9.3.0 - 2022-12-dd
+## 9.3.0 - 2022-12-06
 
 ### Changed
 - Do not use `referenceId` when creating keystore.

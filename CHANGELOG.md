@@ -1,5 +1,14 @@
 # bedrock-tokenizer ChangeLog
 
+## 10.0.0 -
+
+### Changed
+- **BREAKING**: Use `@bedrock/mongodb: ^11`.
+- **BREAKING**: Change use of results to match Node Mongo Driver 4.
+
+### Removed
+- Remove deprecated mongodb index `background`.
+
 ## 9.2.0 - 2022-11-13
 
 ### Changed

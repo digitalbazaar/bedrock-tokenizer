@@ -1,5 +1,11 @@
 # bedrock-tokenizer ChangeLog
 
+## 10.0.0 - 2023-09-xx
+
+### Changed
+- **BREAKING**: Drop support for Node.js < 18.
+- Use `@digitalbazaar/webkms-client@13`. This version requires Node.js 18+.
+
 ## 9.3.0 - 2022-12-06
 
 ### Changed

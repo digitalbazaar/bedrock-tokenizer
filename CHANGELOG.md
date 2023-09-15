@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 10.0.0 - 2023-09-xx
+## 10.0.0 - 2023-09-15
 
 ### Changed
 - **BREAKING**: Drop support for Node.js < 18.

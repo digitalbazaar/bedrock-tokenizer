@@ -1,5 +1,10 @@
 # bedrock-tokenizer ChangeLog
 
+## 10.0.1 - 2025-mm-dd
+
+### Fixed
+- Use `result.modifiedCount` to enable newer mongodb driver.
+
 ## 10.0.0 - 2023-09-15
 
 ### Changed

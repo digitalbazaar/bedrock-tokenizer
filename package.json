@@ -29,21 +29,20 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-tokenizer",
   "dependencies": {
-    "@digitalbazaar/webkms-client": "^13.0.0",
+    "@digitalbazaar/webkms-client": "^14.1.2",
     "base64url-universal": "^2.0.0"
   },
   "peerDependencies": {
     "@bedrock/app-identity": "^4.0.0",
-    "@bedrock/core": "^6.0.1",
-    "@bedrock/https-agent": "^4.0.0",
-    "@bedrock/mongodb": "^10.0.0"
+    "@bedrock/core": "^6.3.0",
+    "@bedrock/https-agent": "^4.1.0",
+    "@bedrock/mongodb": "^11.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.18.0",
+    "eslint": "^8.57.1",
     "eslint-config-digitalbazaar": "^5.2.0",
-    "eslint-plugin-jsdoc": "^50.6.3",
-    "eslint-plugin-unicorn": "^55.0.0",
-    "jsdoc-to-markdown": "^9.1.1"
+    "eslint-plugin-jsdoc": "^50.6.8",
+    "eslint-plugin-unicorn": "^56.0.1"
   },
   "directories": {
     "lib": "./lib"

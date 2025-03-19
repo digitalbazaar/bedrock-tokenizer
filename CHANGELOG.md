@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 11.0.0 - 2025-03-xx
+## 11.0.0 - 2025-03-18
 
 ### Changed
 - Update dependencies.

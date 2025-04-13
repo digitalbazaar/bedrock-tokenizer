@@ -54,13 +54,13 @@ describe('Tokenizer Database Tests', function() {
         executionStats.nReturned.should.equal(1);
         executionStats.totalKeysExamined.should.equal(1);
         executionStats.totalDocsExamined.should.equal(1);
-        const {executionStages: targetStage} = executionStats;
+        let {executionStages: targetStage} = executionStats;
         // only mongodb 8+ has 'EXPRESS_IXSCAN'
         if(targetStage.stage === 'EXPRESS_IXSCAN') {
           targetStage.keyPattern.should.eql(
             '{ tokenizer.state: 1 }');
         } else {
-          targetStage = executionStages.inputStage.inputStage;
+          targetStage = executionStats.executionStages.inputStage.inputStage;
           targetStage.stage.should.equal('IXSCAN');
           targetStage.keyPattern.should.eql(
             {'tokenizer.state': 1});
@@ -78,13 +78,13 @@ describe('Tokenizer Database Tests', function() {
         executionStats.nReturned.should.equal(1);
         executionStats.totalKeysExamined.should.equal(1);
         executionStats.totalDocsExamined.should.equal(1);
-        const {executionStages: targetStage} = executionStats;
+        let {executionStages: targetStage} = executionStats;
         // only mongodb 8+ has 'EXPRESS_IXSCAN'
         if(targetStage.stage === 'EXPRESS_IXSCAN') {
           targetStage.keyPattern.should.eql(
             '{ tokenizer.state: 1 }');
         } else {
-          targetStage = executionStages.inputStage.inputStage;
+          targetStage = executionStats.executionStages.inputStage.inputStage;
           targetStage.stage.should.equal('IXSCAN');
           targetStage.keyPattern.should.eql(
             {'tokenizer.state': 1});

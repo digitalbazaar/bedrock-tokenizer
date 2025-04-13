@@ -1,5 +1,5 @@
 /*!
- * Copyright (c) 2020-2022 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2020-2025 Digital Bazaar, Inc. All rights reserved.
  */
 import {cleanDB, insertRecord} from './helpers.js';
 import {mockRecord, mockRecord2} from './mock.data.js';
@@ -54,10 +54,17 @@ describe('Tokenizer Database Tests', function() {
         executionStats.nReturned.should.equal(1);
         executionStats.totalKeysExamined.should.equal(1);
         executionStats.totalDocsExamined.should.equal(1);
-        executionStats.executionStages.inputStage.inputStage.stage
-          .should.equal('IXSCAN');
-        executionStats.executionStages.inputStage.inputStage.keyPattern
-          .should.eql({'tokenizer.state': 1});
+        const {executionStages: targetStage} = executionStats;
+        // only mongodb 8+ has 'EXPRESS_IXSCAN'
+        if(targetStage.stage === 'EXPRESS_IXSCAN') {
+          targetStage.keyPattern.should.eql(
+            '{ tokenizer.state: 1 }');
+        } else {
+          targetStage = executionStages.inputStage.inputStage;
+          targetStage.stage.should.equal('IXSCAN');
+          targetStage.keyPattern.should.eql(
+            {'tokenizer.state': 1});
+        }
       });
     it(`is properly indexed for 'tokenizer.state' in _markTokenizerAsCurrent`,
       async function() {
@@ -71,10 +78,17 @@ describe('Tokenizer Database Tests', function() {
         executionStats.nReturned.should.equal(1);
         executionStats.totalKeysExamined.should.equal(1);
         executionStats.totalDocsExamined.should.equal(1);
-        executionStats.executionStages.inputStage.inputStage.stage.should
-          .equal('IXSCAN');
-        executionStats.executionStages.inputStage.inputStage.keyPattern
-          .should.eql({'tokenizer.state': 1});
+        const {executionStages: targetStage} = executionStats;
+        // only mongodb 8+ has 'EXPRESS_IXSCAN'
+        if(targetStage.stage === 'EXPRESS_IXSCAN') {
+          targetStage.keyPattern.should.eql(
+            '{ tokenizer.state: 1 }');
+        } else {
+          targetStage = executionStages.inputStage.inputStage;
+          targetStage.stage.should.equal('IXSCAN');
+          targetStage.keyPattern.should.eql(
+            {'tokenizer.state': 1});
+        }
       });
     it(`is properly indexed for compound query of 'tokenizer.id' and ` +
       `'tokenizer.state' in _readyTokenizer()`, async function() {

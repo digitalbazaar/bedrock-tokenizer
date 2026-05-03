@@ -26,6 +26,7 @@
     "@bedrock/meter-usage-reporter": "^10.0.0",
     "@bedrock/mongodb": "^11.0.0",
     "@bedrock/package-manager": "^3.0.0",
+    "@bedrock/record-cipher": "^1.2.0",
     "@bedrock/security-context": "^9.0.0",
     "@bedrock/server": "^5.1.0",
     "@bedrock/ssm-mongodb": "^13.0.0",

@@ -1,6 +1,6 @@
 # bedrock-tokenizer ChangeLog
 
-## 11.1.0 - 2026-mm-dd
+## 11.1.0 - 2026-05-03
 
 ### Added
 - Add support for encrypting tokenizer records.

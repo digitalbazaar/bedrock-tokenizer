@@ -1,5 +1,5 @@
 /*!
- * Copyright (c) 2020-2022 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2020-2026 Digital Bazaar, Inc.
  */
 import {config} from '@bedrock/core';
 import {fileURLToPath} from 'node:url';
@@ -24,3 +24,11 @@ config.mongodb.dropCollections.collections = [];
 config['https-agent'].rejectUnauthorized = false;
 
 config.tokenizer.kms.ipAllowList = ['127.0.0.1/32', '::1/128'];
+
+config.tokenizer.tokenizerRecordEncryption = {
+  currentKekId: 'urn:test:aes256',
+  keks: [{
+    id: 'urn:test:aes256',
+    secretKeyMultibase: 'uogH3ERq9FRYOV8IuUiD2gKZs_qN6SLU-6RtbBUfzqQwGdg'
+  }]
+};
